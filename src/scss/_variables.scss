@@ -1,0 +1,94 @@
+// ! here and below we use common variables
+// ! if you have to, please, add the new variable or if you have offers - write your comments without redact
+
+//
+// Fonts
+// -family
+$f-family-main: "Montserrat", sans-serif;
+$f-family-secondary: "Lato", sans-serif;
+// -color
+$fonts-color-main: hsla(257, 21%, 59%, 1);
+$fonts-color-headers-main: hsla(0, 0%, 100%, 1);
+$fonts-color-text: hsla(208, 8%, 55%, 1);
+$fonts-color-headers-secondary: hsla(258, 11%, 41%, 1);
+$fonts-color-headers-small: hsla(0, 0%, 20%, 1);
+$fonts-color-text-decor: hsla(291, 10%, 61%, 1);
+// -size
+$fonts-size-s-xs: 12px;
+$fonts-size-s-s: 14px;
+$fonts-size-s-m: 15px;
+$fonts-size-s-l: 16px;
+$fonts-size-s-xl: 18px;
+$fonts-size-m-s: 21px;
+$fonts-size-m-m: 24px;
+$fonts-size-m-l: 26px;
+$fonts-size-m-xl: 28px;
+$fonts-size-l-s: 30px;
+$fonts-size-l-m: 32px;
+$fonts-size-l-l: 36px;
+$fonts-size-xl-s: 42px;
+$fonts-size-xl-m: 48px;
+$fonts-size-xl-l: 54px;
+$fonts-size-xxl-s: 60px;
+$fonts-size-xxl-m: 72px;
+$fonts-size-xxl-l: 82px;
+// line height
+$fonts-line-height-s-xs: 14px;
+$fonts-line-height-s-s: 15px;
+$fonts-line-height-s-m: 16px;
+$fonts-line-height-s-l: 17px;
+$fonts-line-height-s-xl: 18px;
+$fonts-line-height-m-xs: 20px;
+$fonts-line-height-m-s: 21px;
+$fonts-line-height-m-m: 22px;
+$fonts-line-height-m-l: 23px;
+$fonts-line-height-m-xl: 24px;
+$fonts-line-height-m-xxl: 26px;
+$fonts-line-height-m-xxxl: 28px;
+$fonts-line-height-l-xs: 30px;
+$fonts-line-height-l-s: 32px;
+$fonts-line-height-l-m: 38px;
+$fonts-line-height-l-l: 42px;
+$fonts-line-height-l-xl: 44px;
+$fonts-line-height-l-xxl: 48px;
+$fonts-line-height-xl-xs: 50px;
+$fonts-line-height-xl-s: 54px;
+$fonts-line-height-xl-m: 62px;
+$fonts-line-height-xl-l: 72px;
+$fonts-line-height-xl-xl: 82px;
+$fonts-line-height-xl-xxl: 84px;
+$fonts-line-height-xl-xxxl: 90px;
+
+//
+// Background color
+$bg-color-page-main: hsla(257, 21%, 59%, 1);
+$bg-color-page-hover: hsla(0, 0%, 100%, 1);
+// Header
+$bg-color-laptop-header: hsl(252, 100%, 1%);
+// Here is what you get
+$bg-color-page-block-light: hsla(0, 0%, 96%, 1);
+// People are talking
+$bg-color-page-block-dark: hsl(291, 14%, 27%);
+// + Price
+$bg-color-block: hsla(0, 0%, 100%, 0.11);
+$bg-color-block-header: hsla(0, 0%, 100%, 0.06);
+$bg-color-block-button: hsla(0, 0%, 100%, 0.15);
+$bg-color-block-accent-header: hsla(0, 0%, 0%, 0.11);
+$bg-color-block-accent: hsla(295, 20%, 24%, 0.84);
+$bg-color-decor-strip: hsla(292, 8%, 37%, 1);
+// Mobile
+$bg-color-header-mobile: hsla(255, 5%, 16%, 1);
+$bg-color-menu-mobile: hsl(0, 0%, 20%);
+$bg-color-menu-mobile-decor: hsl(0, 0%, 23%);
+
+//
+// @media
+$media-mobile: 320px; /* min-width; 320 - 480, not less than 320px */
+$media-tablet: 481px; /* min-width; 481 - 992 */
+$media-laptop: 993px; /* min-width: 993 - 1200 */
+$media-laptop-large: 1201px; /* min-width; if more than 1200px - content = 1200px + on the center of the page */
+
+//
+// Padding
+// padding for all screens
+$padding-container: 10px;
