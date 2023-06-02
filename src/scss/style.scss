@@ -52,9 +52,9 @@ body {
     min-width: 320px;
   }
 
-  @media only screen and (min-width: 1201px) {
-    padding: 0px;
-  }
+  // @media only screen and (min-width: 1201px) {
+  //   padding: 0px;
+  // }
 }
 
 //
@@ -62,7 +62,9 @@ body {
 .button,
 .main-block__headline,
 .main-block__headline-text,
-.advantage__headline {
+.block-text,
+.advantage__headline,
+.prices__headline {
   text-transform: capitalize;
 }
 
@@ -87,7 +89,6 @@ body {
 //
 // Main block
 .main-block {
-  // height: 100%;
   background-image: url(../images/pictures/main.webp);
   background-position-x: center;
   background-repeat: no-repeat;
@@ -102,7 +103,6 @@ body {
     background-position-y: 95%;
   }
   @media only screen and (min-width: 993px) {
-    height: 700px;
     background-position-y: 100%;
   }
   @media only screen and (min-width: 1201px) {
@@ -170,8 +170,7 @@ body {
   }
 
   &__button-wrapper {
-    // TODO !!!!!!!!!!!!!!!
-    background-color: white;
+    background-color: variables.$bg-color-page-main-background;
     height: 78px;
     margin-top: -18px;
     position: relative;
@@ -199,12 +198,16 @@ body {
 .advantages__headline,
 .advantage__headline,
 .advantage__paragraph,
+.prices__headline,
 .prices__headline {
   text-align: center;
 }
 
 .main-block__headline-text > span,
-.repo-details-section__header {
+.repo-details-section__header,
+.button--prices,
+.prices__price__headline,
+.block-text--prices {
   text-transform: uppercase;
 }
 
@@ -230,7 +233,6 @@ body {
 }
 
 .block-text {
-  text-transform: capitalize;
   font-size: variables.$fonts-size-s-s;
   line-height: variables.$fonts-line-height-s-xs;
   color: variables.$fonts-color-text;
@@ -259,7 +261,6 @@ body {
 
 .repo-details-section {
   margin: 47px 0px 88px;
-  min-width: 320px;
 
   @media only screen and (min-width: 481px) {
     line-height: variables.$fonts-line-height-s-m;
@@ -271,6 +272,8 @@ body {
   }
 
   &-wrapper {
+    margin: 0 auto;
+    min-width: 320px;
     @media only screen and (min-width: 993px) {
       margin: 0 auto;
       width: 906px;
@@ -313,7 +316,6 @@ body {
   &__details {
     flex-wrap: wrap;
     @include mixins.flexbox(center, center, row);
-    // width: 251px;
     height: 88px;
     gap: 0px 10px;
 
@@ -361,9 +363,9 @@ body {
 .advantages {
   padding: 0px 15px;
 
-  @media only screen and (min-width: 481px) {
-    padding: 0px 30px;
-  }
+  // @media only screen and (min-width: 481px) {
+  //   padding: 0px 30px;
+  // }
   @media only screen and (min-width: 993px) {
     width: 540px;
     grid-area: list-advantages;
@@ -373,6 +375,7 @@ body {
   }
 
   &-background {
+    min-width: 320px;
     @media only screen and (min-width: 993px) {
       background-color: variables.$bg-color-page-block-light;
     }
@@ -403,12 +406,10 @@ body {
     line-height: variables.$fonts-line-height-l-m;
     color: variables.$fonts-color-main;
     margin-bottom: 36px;
-    padding: 0px 33px;
 
     @media only screen and (min-width: 481px) {
       font-size: variables.$fonts-size-xl-s;
       line-height: variables.$fonts-line-height-l-xl;
-      width: 100%;
       margin-bottom: 49px;
     }
     @media only screen and (min-width: 993px) {
@@ -434,12 +435,11 @@ body {
     margin-top: 21px;
 
     @media only screen and (max-width: 480px) {
-      min-width: 317px;
       overflow: hidden;
       margin-left: 10px;
     }
     @media only screen and (min-width: 481px) {
-      @include mixins.flexbox(end, start, row);
+      @include mixins.flexbox(flex-end, flex-start, row);
       width: 100%;
       padding-left: 23px;
     }
@@ -506,12 +506,10 @@ body {
 
   &__text {
     @media only screen and (min-width: 481px) {
-      @include mixins.flexbox(start, start, column);
+      @include mixins.flexbox(flex-start, flex-start, column);
       width: 80%;
     }
     @media only screen and (min-width: 993px) {
-      @include mixins.flexbox(start, start, column);
-      // TODO ?
       width: 72%;
     }
   }
@@ -547,15 +545,234 @@ body {
 //
 // Price block - "Fork Subscription Pricing"
 .prices-background {
-  background-color: variables.$bg-color-page-block-dark;
+  min-width: 320px;
+}
+
+.prices-wrapper {
+  @media only screen and (min-width: 481px) {
+    padding-top: 90px;
+    padding-bottom: 94px;
+  }
+  @media only screen and (min-width: 993px) {
+    padding-top: 112px;
+    padding-bottom: 73px;
+  }
+  @media only screen and (min-width: 1201px) {
+    max-width: 1200px;
+  }
 }
 
 .prices {
+  display: grid;
+  grid-template-columns: 299px;
+  row-gap: 18px;
+  padding-bottom: 12px;
+  justify-content: center;
+
+  @media only screen and (min-width: 643px) {
+    grid-template-columns: 299px 299px;
+    column-gap: 25px;
+    row-gap: 30px;
+    padding-bottom: 0px;
+  }
+  @media only screen and (min-width: 1135px) {
+    grid-template-columns: 257px 257px 299px 257px;
+    column-gap: 1.2%;
+  }
+  @media only screen and (min-width: 1201px) {
+    grid-template-columns: 257px 257px 299px 257px;
+    column-gap: 15px;
+  }
+
   &__headline {
     @include mixins.font-main-stress;
     font-size: variables.$fonts-size-m-xl;
     line-height: variables.$fonts-line-height-l-l;
     color: variables.$fonts-color-headers-main;
-    padding-bottom: 20px;
+    padding-bottom: 32px;
+
+    @media only screen and (min-width: 481px) {
+      font-size: variables.$fonts-size-xl-s;
+      line-height: variables.$fonts-line-height-l-xl;
+      padding-bottom: 39px;
+    }
+    @media only screen and (min-width: 993px) {
+      pfont-size: variables.$fonts-size-xl-m;
+      line-height: variables.$fonts-line-height-xl-xs;
+      padding-bottom: 61px;
+    }
+  }
+}
+
+.prices__price-wrapper {
+  @include mixins.flexbox(center, center, column);
+  width: 100%;
+
+  @media only screen and (min-width: 643px) {
+    &:first-child {
+      @include mixins.flexbox(flex-end, flex-end, column);
+    }
+    &:nth-child(2) {
+      @include mixins.flexbox(flex-end, flex-start, column);
+    }
+    &:nth-child(3) {
+      @include mixins.flexbox(flex-start, flex-end, column);
+      height: 560px;
+    }
+    &:nth-child(4) {
+      @include mixins.flexbox(center, flex-start, column);
+    }
+  }
+  @media only screen and (min-width: 1135px) {
+    &:first-child {
+      @include mixins.flexbox(center, center, column);
+    }
+    &:nth-child(2) {
+      @include mixins.flexbox(center, center, column);
+    }
+    &:nth-child(3) {
+      @include mixins.flexbox(center, center, column);
+      height: 560px;
+    }
+    &:nth-child(4) {
+      @include mixins.flexbox(center, center, column);
+    }
+  }
+}
+
+.prices__price {
+  @include mixins.flexbox(space-between, center, column);
+  background-color: variables.$bg-color-block;
+
+  @media only screen and (min-width: 993px) {
+    width: 100%;
+  }
+
+  &__headline {
+    @include mixins.flexbox(center, center, row);
+    width: 100%;
+    height: 91px;
+    background-color: variables.$bg-color-block-header;
+    @include mixins.font-main-regular;
+    font-size: variables.$fonts-size-m-m;
+    line-height: variables.$fonts-line-height-m-xl;
+    color: variables.$fonts-color-headers-main;
+
+    @media only screen and (min-width: 481px) {
+      height: 97px;
+    }
+  }
+
+  &__text {
+    @include mixins.flexbox(space-between, center, column);
+    padding: 30px 0px 38px;
+  }
+
+  &__number {
+    margin-bottom: 20px;
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-xxl-s;
+    line-height: variables.$fonts-line-height-xl-m;
+    color: variables.$fonts-color-headers-main;
+
+    & > span {
+      @include mixins.font-main-regular;
+    }
+  }
+
+  &__decor-line {
+    width: 60px;
+    border-bottom: solid 5px variables.$fonts-color-main;
+    margin: 38px 0px 30px;
+
+    @media only screen and (min-width: 993px) {
+      pfont-size: variables.$fonts-size-xl-m;
+      line-height: variables.$fonts-line-height-xl-xs;
+      margin-bottom: 36px;
+    }
+  }
+
+  &__options {
+    @include mixins.font-main-regular;
+    font-size: variables.$fonts-size-s-l;
+    line-height: variables.$fonts-line-height-s-xl;
+    color: variables.$fonts-color-headers-main;
+  }
+
+  &__options--margin {
+    margin-bottom: 17px;
+
+    @media only screen and (min-width: 481px) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &--not-accent {
+    width: 257px;
+  }
+
+  &--accent {
+    background-color: variables.$bg-color-block-accent;
+    width: 100%;
+
+    & .prices__price__number {
+      @media only screen and (min-width: 481px) {
+        font-size: variables.$fonts-size-xxl-l;
+        line-height: variables.$fonts-line-height-xl-xxxl;
+      }
+    }
+
+    & .button {
+      font-size: variables.$fonts-size-s-l;
+      line-height: variables.$fonts-line-height-s-xl;
+    }
+
+    & .button--prices {
+      width: 190px;
+      height: 52px;
+
+      @media only screen and (min-width: 481px) {
+        margin-top: 83px;
+      }
+    }
+
+    & .prices__price__text {
+      padding: 14px 0px 47px;
+    }
+
+    & .prices__price__number {
+      margin-bottom: 16px;
+    }
+
+    & .prices__price__decor-line {
+      margin: 46px 0px 40px;
+    }
+  }
+
+  &__headline--accent {
+    background-color: variables.$bg-color-block-accent-header;
+    height: 111px;
+  }
+}
+
+.prices__price--not-accent--one .button--prices {
+  margin-top: 57px;
+}
+
+.button--prices {
+  width: 160px;
+  height: 42px;
+  margin-top: 39px;
+  background-color: variables.$bg-color-block-button;
+  color: variables.$fonts-color-headers-main;
+  @include mixins.font-main-regular;
+}
+
+.block-text--prices {
+  text-transform: uppercase;
+  color: variables.$fonts-color-headers-main;
+
+  @media only screen and (min-width: 481px) {
+    line-height: variables.$fonts-line-height-s-m;
   }
 }
