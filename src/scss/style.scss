@@ -545,6 +545,10 @@ body {
 //
 // Price block - "Fork Subscription Pricing"
 .prices-background {
+  background-color: variables.$bg-color-page-block-dark;
+}
+
+.prices-background {
   min-width: 320px;
 }
 
