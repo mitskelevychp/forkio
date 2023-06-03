@@ -48,13 +48,9 @@ body {
   margin: 0 auto;
   padding: 0px variables.$padding-container;
 
-  @media only screen and (max-width: 320px) {
-    min-width: 320px;
+  @media only screen and (max-width: variables.$media-mobile) {
+    min-width: variables.$media-mobile;
   }
-
-  // @media only screen and (min-width: 1201px) {
-  //   padding: 0px;
-  // }
 }
 
 //
@@ -80,7 +76,7 @@ body {
   font-size: variables.$fonts-size-s-m;
   line-height: variables.$fonts-line-height-s-s;
 
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     width: 145px;
     height: 38px;
   }
@@ -95,17 +91,17 @@ body {
   background-position-y: 79%;
   height: 630px;
 
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: variables.$media-mobile) {
     background-size: 448%;
   }
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     height: 682px;
     background-position-y: 95%;
   }
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-laptop) {
     background-position-y: 100%;
   }
-  @media only screen and (min-width: 1201px) {
+  @media only screen and (min-width: variables.$media-laptop-large) {
     background-size: 101%;
     background-position-y: 79%;
   }
@@ -113,7 +109,7 @@ body {
   &__headline-wrapper {
     padding-top: 49px;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       padding-top: 69px;
     }
   }
@@ -124,11 +120,11 @@ body {
     line-height: variables.$fonts-line-height-l-xxl;
     color: variables.$fonts-color-headers-main;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       font-size: variables.$fonts-size-xxl-m;
       line-height: variables.$fonts-line-height-xl-l;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       font-size: variables.$fonts-size-xxl-l;
       line-height: variables.$fonts-line-height-xl-xl;
     }
@@ -141,12 +137,11 @@ body {
     margin-top: 21px;
     height: 52px;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       @include mixins.font-secondary-regular;
       font-size: variables.$fonts-size-m-m;
     }
-
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       font-size: variables.$fonts-size-l-s;
       line-height: variables.$fonts-line-height-l-xs;
     }
@@ -158,11 +153,11 @@ body {
       color: variables.$fonts-color-text;
       margin-top: 17px;
 
-      @media only screen and (min-width: 481px) {
+      @media only screen and (min-width: variables.$media-tablet) {
         margin-top: 19px;
         @include mixins.font-main-regular;
       }
-      @media only screen and (min-width: 993px) {
+      @media only screen and (min-width: variables.$media-laptop) {
         font-size: variables.$fonts-size-s-l;
         line-height: variables.$fonts-line-height-s-m;
       }
@@ -186,7 +181,7 @@ body {
     top: -22.5px;
     transform: translate(-50%);
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       top: -31px;
     }
   }
@@ -217,18 +212,18 @@ body {
   font-size: variables.$fonts-size-s-xl;
   line-height: variables.$fonts-line-height-m-xs;
 
-  &:hover {
-    border-width: 2px;
-  }
-
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     width: 390px;
     height: 62px;
     font-size: variables.$fonts-size-m-s;
     line-height: variables.$fonts-line-height-m-l;
   }
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-laptop) {
     line-height: variables.$fonts-line-height-m-m;
+  }
+
+  &:hover {
+    border-width: 2px;
   }
 }
 
@@ -241,11 +236,11 @@ body {
 .block-text--under-main-block {
   padding-top: 36.5px;
 
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     line-height: variables.$fonts-line-height-s-m;
     padding-top: 53.5px;
   }
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-laptop) {
     line-height: variables.$fonts-line-height-s-s;
     padding-top: 54px;
   }
@@ -262,11 +257,11 @@ body {
 .repo-details-section {
   margin: 47px 0px 88px;
 
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     line-height: variables.$fonts-line-height-s-m;
     margin: 88px 0px 159px;
   }
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-laptop) {
     line-height: variables.$fonts-line-height-s-s;
     margin: 60.5px 0px 70px;
   }
@@ -275,7 +270,6 @@ body {
     margin: 0 auto;
     min-width: 320px;
     @media only screen and (min-width: 993px) {
-      margin: 0 auto;
       width: 906px;
     }
   }
@@ -286,11 +280,11 @@ body {
     line-height: variables.$fonts-line-height-m-xxxl;
     color: variables.$fonts-color-headers-secondary;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       font-size: variables.$fonts-size-xl-s;
       line-height: variables.$fonts-line-height-l-l;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       font-size: variables.$fonts-size-xl-l;
       line-height: variables.$fonts-line-height-xl-s;
     }
@@ -303,12 +297,12 @@ body {
     line-height: variables.$fonts-line-height-m-xs;
     color: variables.$fonts-color-headers-small;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       padding: 28px 39px 41px;
       font-size: variables.$fonts-size-m-s;
       line-height: variables.$fonts-line-height-l-s;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       padding: 35px 0px 30px;
     }
   }
@@ -319,7 +313,7 @@ body {
     height: 88px;
     gap: 0px 10px;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       height: 100%;
     }
   }
@@ -361,22 +355,21 @@ body {
 //
 // Advantages block - "Here is what you get"
 .advantages {
-  padding: 0px 15px;
-
-  // @media only screen and (min-width: 481px) {
-  //   padding: 0px 30px;
-  // }
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-tablet) {
+    padding: 0px 30px;
+  }
+  @media only screen and (min-width: variables.$media-laptop) {
     width: 540px;
     grid-area: list-advantages;
   }
-  @media only screen and (min-width: 1201px) {
+  @media only screen and (min-width: variables.$media-laptop-large) {
     padding-right: 0px;
   }
 
   &-background {
     min-width: 320px;
-    @media only screen and (min-width: 993px) {
+
+    @media only screen and (min-width: variables.$media-laptop) {
       background-color: variables.$bg-color-page-block-light;
     }
   }
@@ -385,16 +378,16 @@ body {
     display: grid;
     grid-template-columns: 1fr;
 
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       grid-template-areas:
         "list-advantages headline"
         "list-advantages picture";
       padding: 94px 0px 33px;
       padding-left: 3%;
     }
-    @media only screen and (min-width: 1201px) {
+    @media only screen and (min-width: variables.$media-laptop-large) {
       padding-left: 0px;
-      width: 1200px;
+      // max-width: 1200px;
       margin: 0 auto;
       column-gap: 49px;
     }
@@ -407,12 +400,12 @@ body {
     color: variables.$fonts-color-main;
     margin-bottom: 36px;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       font-size: variables.$fonts-size-xl-s;
       line-height: variables.$fonts-line-height-l-xl;
       margin-bottom: 49px;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       grid-area: headline;
@@ -438,12 +431,12 @@ body {
       overflow: hidden;
       margin-left: 10px;
     }
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       @include mixins.flexbox(flex-end, flex-start, row);
       width: 100%;
       padding-left: 23px;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       grid-area: picture;
       display: block;
       margin-top: 0px;
@@ -464,19 +457,11 @@ body {
 .advantage {
   margin-bottom: 37px;
 
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     @include mixins.flexbox(space-between, center, row);
   }
-  @media only screen and (min-width: 993px) {
-    margin-bottom: 33px;
-  }
-
-  &__icon-wrapper {
-    @media only screen and (min-width: 481px) {
-      width: 111px;
-      display: flex;
-      justify-content: center;
-    }
+  @media only screen and (min-width: variables.$media-laptop) {
+    padding-bottom: 33px;
   }
 
   &__icon {
@@ -484,7 +469,7 @@ body {
     height: 64px;
     margin-bottom: 25px;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       margin-bottom: 0px;
     }
 
@@ -505,11 +490,11 @@ body {
   }
 
   &__text {
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       @include mixins.flexbox(flex-start, flex-start, column);
       width: 80%;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       width: 72%;
     }
   }
@@ -521,11 +506,11 @@ body {
     line-height: variables.$fonts-line-height-s-m;
     color: variables.$fonts-color-headers-small;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       margin-bottom: 16px;
       line-height: variables.$fonts-line-height-m-s;
     }
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       margin-bottom: 16.56px;
     }
   }
@@ -536,7 +521,7 @@ body {
     line-height: variables.$fonts-line-height-m-s;
     color: variables.$fonts-color-text;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       text-align: start;
     }
   }
@@ -553,11 +538,11 @@ body {
 }
 
 .prices-wrapper {
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     padding-top: 90px;
     padding-bottom: 94px;
   }
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-laptop) {
     padding-top: 112px;
     padding-bottom: 73px;
   }
@@ -583,7 +568,7 @@ body {
     grid-template-columns: 257px 257px 299px 257px;
     column-gap: 1.2%;
   }
-  @media only screen and (min-width: 1201px) {
+  @media only screen and (min-width: variables.$media-laptop-large) {
     grid-template-columns: 257px 257px 299px 257px;
     column-gap: 15px;
   }
@@ -648,7 +633,7 @@ body {
   @include mixins.flexbox(space-between, center, column);
   background-color: variables.$bg-color-block;
 
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: variables.$media-laptop) {
     width: 100%;
   }
 
@@ -662,7 +647,7 @@ body {
     line-height: variables.$fonts-line-height-m-xl;
     color: variables.$fonts-color-headers-main;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       height: 97px;
     }
   }
@@ -689,7 +674,7 @@ body {
     border-bottom: solid 5px variables.$fonts-color-main;
     margin: 38px 0px 30px;
 
-    @media only screen and (min-width: 993px) {
+    @media only screen and (min-width: variables.$media-laptop) {
       pfont-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       margin-bottom: 36px;
@@ -706,7 +691,7 @@ body {
   &__options--margin {
     margin-bottom: 17px;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       margin-bottom: 0px;
     }
   }
@@ -719,13 +704,6 @@ body {
     background-color: variables.$bg-color-block-accent;
     width: 100%;
 
-    & .prices__price__number {
-      @media only screen and (min-width: 481px) {
-        font-size: variables.$fonts-size-xxl-l;
-        line-height: variables.$fonts-line-height-xl-xxxl;
-      }
-    }
-
     & .button {
       font-size: variables.$fonts-size-s-l;
       line-height: variables.$fonts-line-height-s-xl;
@@ -735,7 +713,7 @@ body {
       width: 190px;
       height: 52px;
 
-      @media only screen and (min-width: 481px) {
+      @media only screen and (min-width: variables.$media-tablet) {
         margin-top: 83px;
       }
     }
@@ -776,7 +754,47 @@ body {
   text-transform: uppercase;
   color: variables.$fonts-color-headers-main;
 
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: variables.$media-tablet) {
     line-height: variables.$fonts-line-height-s-m;
+  }
+}
+
+//
+// @media-styles
+@media only screen and (min-width: variables.$media-tablet) {
+  .header__nav-wrapper {
+    display: none;
+  }
+
+  .advantage__icon-wrapper {
+    margin-right: 23px;
+    width: 111px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .prices__price--accent .prices__price__number {
+    font-size: variables.$fonts-size-xxl-l;
+    line-height: variables.$fonts-line-height-xl-xxxl;
+  }
+}
+
+@media only screen and (min-width: variables.$media-laptop) {
+  .header__button {
+    order: 3;
+  }
+}
+
+@media only screen and (min-width: variables.$media-laptop-large) {
+  .header,
+  .advantages-wrapper,
+  .reviews-wrapper,
+  .prices-wrapper {
+    max-width: 1200px;
+  }
+
+  .header,
+  .advantages-wrapper {
+    margin: 0 auto;
   }
 }
