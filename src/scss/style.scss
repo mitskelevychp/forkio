@@ -87,7 +87,7 @@ body {
     order: 1;
 
     @media only screen and (min-width: 768px) {
-      @include mixins.flexbox(start, center, row);
+      @include mixins.flexbox(flex-start, center, row);
       height: 50%;
       width: 50%;
     }
@@ -177,7 +177,7 @@ body {
         font-weight: 400;
         font-size: variables.$fonts-size-m-l;
         line-height: variables.$fonts-line-height-m-xxl;
-        @include mixins.flexbox(start, center, row);
+        @include mixins.flexbox(flex-start, center, row);
         // padding: 35px 35px;
         border-bottom: 1px solid variables.$fonts-color-main;
       }
@@ -225,7 +225,7 @@ body {
       line-height: variables.$fonts-line-height-s-l;
       order: 2;
       width: 60%;
-      @include mixins.flexbox(end, center, row);
+      @include mixins.flexbox(flex-end, center, row);
       &-item {
         margin: 10px 15px;
       }
@@ -335,7 +335,7 @@ body {
 }
 
 // -----------the end of Header------------
-
+.main-block,
 .block-text,
 .repo-details-section,
 .repo-details__text,
