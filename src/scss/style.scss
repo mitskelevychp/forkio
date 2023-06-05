@@ -44,8 +44,12 @@ body {
   @include mixins.font-main-regular;
 }
 
-.container {
+.container,
+.repo-details-section-wrapper {
   margin: 0 auto;
+}
+
+.container {
   padding: 0px variables.$padding-container;
 
   @media only screen and (max-width: variables.$media-mobile) {
@@ -54,36 +58,37 @@ body {
 }
 
 //
-// Header
-.button,
-.main-block__headline,
-.main-block__headline-text,
-.block-text,
-.advantage__headline,
-.prices__headline {
-  text-transform: capitalize;
-}
-
-// ! for your button to (common style for all buttons)
-.button {
-  width: 119px;
-  height: 37px;
-  background-color: variables.$bg-color-page-main;
-  border-radius: 40px;
-  @include mixins.flexbox(center, center, row);
-  color: variables.$fonts-color-headers-main;
-  @include mixins.font-main-stress;
-  font-size: variables.$fonts-size-s-m;
-  line-height: variables.$fonts-line-height-s-s;
-
-  @media only screen and (min-width: variables.$media-tablet) {
-    width: 145px;
-    height: 38px;
-  }
-}
-
-//
 // Main block
+.main-block,
+.block-text,
+.repo-details-section,
+.repo-details__text,
+.advantages__headline,
+.advantage__headline,
+.advantage__paragraph,
+.prices__headline {
+  text-align: center;
+}
+
+.main-block__headline,
+.button,
+.repo-details-section__header,
+.advantages__headline,
+.prices__headline,
+.prices__price__number {
+  @include mixins.font-main-stress;
+}
+
+.main-block__headline,
+.button,
+.prices__headline,
+.prices__price__headline,
+.prices__price__number,
+.prices__price__options,
+.button--prices {
+  color: variables.$fonts-color-headers-main;
+}
+
 .main-block {
   background-image: url(../images/pictures/main.webp);
   background-position-x: center;
@@ -115,10 +120,8 @@ body {
   }
 
   &__headline {
-    @include mixins.font-main-stress;
     font-size: variables.$fonts-size-xl-m;
     line-height: variables.$fonts-line-height-l-xxl;
-    color: variables.$fonts-color-headers-main;
 
     @media only screen and (min-width: variables.$media-tablet) {
       font-size: variables.$fonts-size-xxl-m;
@@ -187,23 +190,35 @@ body {
   }
 }
 
-.main-block,
-.block-text,
-.repo-details-section,
-.advantages__headline,
-.advantage__headline,
-.advantage__paragraph,
-.prices__headline,
-.prices__headline {
-  text-align: center;
-}
-
 .main-block__headline-text > span,
 .repo-details-section__header,
-.button--prices,
 .prices__price__headline,
 .block-text--prices {
   text-transform: uppercase;
+}
+
+.button,
+.main-block__headline,
+.main-block__headline-text,
+.block-text,
+.advantage__headline,
+.prices__headline {
+  text-transform: capitalize;
+}
+
+.button {
+  width: 119px;
+  height: 37px;
+  background-color: variables.$bg-color-page-main;
+  border-radius: 40px;
+  @include mixins.flexbox(center, center, row);
+  font-size: variables.$fonts-size-s-m;
+  line-height: variables.$fonts-line-height-s-s;
+
+  @media only screen and (min-width: variables.$media-tablet) {
+    width: 145px;
+    height: 38px;
+  }
 }
 
 .button--main-block {
@@ -220,10 +235,6 @@ body {
   }
   @media only screen and (min-width: variables.$media-laptop) {
     line-height: variables.$fonts-line-height-m-m;
-  }
-
-  &:hover {
-    border-width: 2px;
   }
 }
 
@@ -267,7 +278,6 @@ body {
   }
 
   &-wrapper {
-    margin: 0 auto;
     min-width: 320px;
     @media only screen and (min-width: 993px) {
       width: 906px;
@@ -275,7 +285,6 @@ body {
   }
 
   &__header {
-    @include mixins.font-main-stress;
     font-size: variables.$fonts-size-m-l;
     line-height: variables.$fonts-line-height-m-xxxl;
     color: variables.$fonts-color-headers-secondary;
@@ -308,10 +317,10 @@ body {
   }
 
   &__details {
-    flex-wrap: wrap;
     @include mixins.flexbox(center, center, row);
     height: 88px;
     gap: 0px 10px;
+    flex-wrap: wrap;
 
     @media only screen and (min-width: variables.$media-tablet) {
       height: 100%;
@@ -342,7 +351,6 @@ body {
     font-weight: 700;
     font-size: variables.$fonts-size-s-xs;
     line-height: variables.$fonts-line-height-m-xs;
-    text-align: center;
     width: 50px;
   }
 }
@@ -385,16 +393,15 @@ body {
       padding: 94px 0px 33px;
       padding-left: 3%;
     }
+
     @media only screen and (min-width: variables.$media-laptop-large) {
       padding-left: 0px;
-      // max-width: 1200px;
       margin: 0 auto;
       column-gap: 49px;
     }
   }
 
   &__headline {
-    @include mixins.font-main-stress;
     font-size: variables.$fonts-size-l-m;
     line-height: variables.$fonts-line-height-l-m;
     color: variables.$fonts-color-main;
@@ -455,7 +462,7 @@ body {
 }
 
 .advantage {
-  margin-bottom: 37px;
+  padding-bottom: 37px;
 
   @media only screen and (min-width: variables.$media-tablet) {
     @include mixins.flexbox(space-between, center, row);
@@ -501,7 +508,6 @@ body {
 
   &__headline {
     margin-bottom: 14px;
-    @include mixins.font-main-regular;
     font-size: variables.$fonts-size-s-l;
     line-height: variables.$fonts-line-height-s-m;
     color: variables.$fonts-color-headers-small;
@@ -546,9 +552,6 @@ body {
     padding-top: 112px;
     padding-bottom: 73px;
   }
-  @media only screen and (min-width: 1201px) {
-    max-width: 1200px;
-  }
 }
 
 .prices {
@@ -566,7 +569,7 @@ body {
   }
   @media only screen and (min-width: 1135px) {
     grid-template-columns: 257px 257px 299px 257px;
-    column-gap: 1.2%;
+    column-gap: 1%;
   }
   @media only screen and (min-width: variables.$media-laptop-large) {
     grid-template-columns: 257px 257px 299px 257px;
@@ -574,10 +577,8 @@ body {
   }
 
   &__headline {
-    @include mixins.font-main-stress;
     font-size: variables.$fonts-size-m-xl;
     line-height: variables.$fonts-line-height-l-l;
-    color: variables.$fonts-color-headers-main;
     padding-bottom: 32px;
 
     @media only screen and (min-width: 481px) {
@@ -586,7 +587,7 @@ body {
       padding-bottom: 39px;
     }
     @media only screen and (min-width: 993px) {
-      pfont-size: variables.$fonts-size-xl-m;
+      font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       padding-bottom: 61px;
     }
@@ -642,10 +643,8 @@ body {
     width: 100%;
     height: 91px;
     background-color: variables.$bg-color-block-header;
-    @include mixins.font-main-regular;
     font-size: variables.$fonts-size-m-m;
     line-height: variables.$fonts-line-height-m-xl;
-    color: variables.$fonts-color-headers-main;
 
     @media only screen and (min-width: variables.$media-tablet) {
       height: 97px;
@@ -659,10 +658,8 @@ body {
 
   &__number {
     margin-bottom: 20px;
-    @include mixins.font-main-stress;
     font-size: variables.$fonts-size-xxl-s;
     line-height: variables.$fonts-line-height-xl-m;
-    color: variables.$fonts-color-headers-main;
 
     & > span {
       @include mixins.font-main-regular;
@@ -675,17 +672,15 @@ body {
     margin: 38px 0px 30px;
 
     @media only screen and (min-width: variables.$media-laptop) {
-      pfont-size: variables.$fonts-size-xl-m;
+      font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       margin-bottom: 36px;
     }
   }
 
   &__options {
-    @include mixins.font-main-regular;
     font-size: variables.$fonts-size-s-l;
     line-height: variables.$fonts-line-height-s-xl;
-    color: variables.$fonts-color-headers-main;
   }
 
   &__options--margin {
@@ -746,8 +741,8 @@ body {
   height: 42px;
   margin-top: 39px;
   background-color: variables.$bg-color-block-button;
-  color: variables.$fonts-color-headers-main;
   @include mixins.font-main-regular;
+  text-transform: uppercase;
 }
 
 .block-text--prices {
@@ -762,8 +757,13 @@ body {
 //
 // @media-styles
 @media only screen and (min-width: variables.$media-tablet) {
-  .header__nav-wrapper {
-    display: none;
+  .button--main-block:hover {
+    background-color: variables.$bg-color-page-hover;
+    border: 2px solid variables.$fonts-color-main;
+
+    & > p {
+      color: variables.$fonts-color-main;
+    }
   }
 
   .advantage__icon-wrapper {
@@ -779,21 +779,12 @@ body {
   }
 }
 
-@media only screen and (min-width: variables.$media-laptop) {
-  .header__button {
-    order: 3;
-  }
-}
-
 @media only screen and (min-width: variables.$media-laptop-large) {
-  .header,
   .advantages-wrapper,
-  .reviews-wrapper,
   .prices-wrapper {
     max-width: 1200px;
   }
 
-  .header,
   .advantages-wrapper {
     margin: 0 auto;
   }
