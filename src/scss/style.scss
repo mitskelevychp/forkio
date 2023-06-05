@@ -55,45 +55,8 @@ body {
 
 //
 // Header
-.button,
-.main-block__headline,
-.main-block__headline-text,
-.block-text,
-.advantage__headline,
-.prices__headline {
-  text-transform: capitalize;
-}
-
-// ! for your button to (common style for all buttons)
-.button {
-  width: 119px;
-  height: 37px;
-  background-color: variables.$bg-color-page-main;
-  border-radius: 40px;
-  @include mixins.flexbox(center, center, row);
-  color: variables.$fonts-color-headers-main;
-  @include mixins.font-main-stress;
-  font-size: variables.$fonts-size-s-m;
-  line-height: variables.$fonts-line-height-s-s;
-
-  @media only screen and (min-width: variables.$media-tablet) {
-    width: 145px;
-    height: 38px;
-  }
-}
-
-//
-
-
-
-
 //-----------------the start of header--------------
-
-
-
-
-
-.header{
+.header {
   background-color: variables.$bg-color-header-mobile;
   width: 100%;
   position: relative;
@@ -113,41 +76,40 @@ body {
     min-height: 100px;
   }
 
-  &__logo{
+  &__logo {
     position: relative;
     z-index: 3;
     @include mixins.flexbox(center, center, row);
     order: 1;
-    
-    @media only screen and (min-width: 768px){
+
+    @media only screen and (min-width: 768px) {
       @include mixins.flexbox(start, center, row);
       height: 50%;
       width: 50%;
     }
-    @media only screen and (min-width: 1200px){
+    @media only screen and (min-width: 1200px) {
       height: 100%;
       width: 15%;
-      &:hover .header__logo-logo{
-        background-image: url(../images-src/logo/logo-hover.png)
+      &:hover .header__logo-logo {
+        background-image: url(../images-src/logo/logo-hover.png);
       }
       &:active,
-      &:hover .header__logo-text{
+      &:hover .header__logo-text {
         color: variables.$fonts-color-headers-main;
       }
     }
   }
-  &__logo-logo{
+  &__logo-logo {
     display: block;
     width: 40px;
     height: 40px;
-    background: url(../images-src/logo/Logo.png)
+    background: url(../images-src/logo/Logo.png);
   }
   @media only screen and (min-width: 1200px) {
-    &__logo-logo:hover{
+    &__logo-logo:hover {
       background: url(../images-src/logo/logo-hover.png);
     }
   }
-
 
   &__logo-text {
     text-transform: uppercase;
@@ -156,21 +118,19 @@ body {
     font-weight: 700;
     margin-left: 16px;
 
-
-
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 767px) {
       display: none;
     }
-    @media only screen and (min-width: 768px) { 
-    display: block;
-    } 
-    @media only screen and (min-width: 1200px){
-      &:hover{
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
+    @media only screen and (min-width: 1200px) {
+      &:hover {
         color: variables.$fonts-color-headers-main;
       }
     }
   }
-  
+
   &__conteiner {
     @include mixins.flexbox(space-between, center, row);
     background-color: variables.$bg-color-header-mobile;
@@ -178,21 +138,20 @@ body {
     height: 100%;
     position: relative;
     z-index: 3;
-    @media only screen and (min-width: 768px){
+    @media only screen and (min-width: 768px) {
       flex-wrap: wrap;
     }
-    @media only screen and (min-width: 1200px){
+    @media only screen and (min-width: 1200px) {
       // @include mixins.flexbox(space-between, center, row);
     }
-    }
-
+  }
 
   &__list {
     @media only screen and (max-width: 767px) {
       display: none;
       background-color: variables.$bg-color-menu-mobile;
       order: 2;
-      &.active{
+      &.active {
         position: fixed;
         top: 0;
         left: 10;
@@ -207,7 +166,7 @@ body {
         font-size: variables.$fonts-size-m-l;
         line-height: variables.$fonts-line-height-m-xxl;
       }
-      &-item{
+      &-item {
         width: 100%;
         height: 100%;
         font-family: variables.$f-family-main;
@@ -218,7 +177,7 @@ body {
         // padding: 35px 35px;
         border-bottom: 1px solid variables.$fonts-color-main;
       }
-      &-item a{  
+      &-item a {
         width: 100%;
         height: 100%;
         font-family: variables.$f-family-main;
@@ -229,20 +188,19 @@ body {
         @include mixins.flexbox(center, center, row);
       }
       &-item:active,
-      &-item:hover a{
+      &-item:hover a {
         color: variables.$fonts-color-main;
       }
 
-      &-item p{
+      &-item p {
         width: 2%;
         height: 60%;
         background-color: variables.$bg-color-menu-mobile;
       }
       &-item:active,
-      &-item:hover p{
+      &-item:hover p {
         background-color: variables.$fonts-color-main;
       }
-
     }
     @media only screen and (min-width: 768px) {
       @include mixins.flexbox(space-around, center, row);
@@ -256,7 +214,7 @@ body {
       line-height: variables.$fonts-line-height-s-xl;
       padding-top: 2%;
     }
-    @media only screen and (min-width: 1200px){
+    @media only screen and (min-width: 1200px) {
       font-family: variables.$f-family-main;
       font-weight: 700;
       font-size: variables.$fonts-size-s-l;
@@ -264,15 +222,13 @@ body {
       order: 2;
       width: 60%;
       @include mixins.flexbox(end, center, row);
-      &-item{
+      &-item {
         margin: 10px 15px;
       }
-      &-item:hover a{
-
+      &-item:hover a {
         color: variables.$fonts-color-headers-main;
       }
     }
-
   }
 
   &__buy {
@@ -290,30 +246,29 @@ body {
     z-index: 3;
     order: 1;
 
-  @media only screen and (max-width: 767px) {
-    width: 120px;
-    padding: 11px 10px;
-  }
-  @media only screen and (min-width: 768px) {
-    width: 145px;
-    padding: 11px 20px;
-    order: 2;
-    height: 50%;
-  }
-  @media only screen and (min-width: 1200px){
-    order: 3;
-    &:hover{
-      color: variables.$fonts-color-main;
-      background-color: variables.$bg-color-page-hover
+    @media only screen and (max-width: 767px) {
+      width: 120px;
+      padding: 11px 10px;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 145px;
+      padding: 11px 20px;
+      order: 2;
+      height: 50%;
+    }
+    @media only screen and (min-width: 1200px) {
+      order: 3;
+      &:hover {
+        color: variables.$fonts-color-main;
+        background-color: variables.$bg-color-page-hover;
+      }
     }
   }
-}
-  
+
   &__button {
     order: 4;
-    @media only screen and (min-width: 768px){
+    @media only screen and (min-width: 768px) {
       display: none;
-
     }
     display: block;
     width: 40px;
@@ -325,26 +280,26 @@ body {
     z-index: 3;
   }
 
-  &__button>span,
-  &__button>span::after{
-    background-color: #FFFFFF;
+  &__button > span,
+  &__button > span::after {
+    background-color: #ffffff;
     width: 26px;
     height: 3px;
     position: absolute;
-    top: 50%; 
+    top: 50%;
     right: 50%;
     margin-right: -13px;
   }
 
-  &__button>span::before,
-  &__button>span::after{
+  &__button > span::before,
+  &__button > span::after {
     content: "";
     transition: 0.2s;
   }
 
-  &__button>span::before{
+  &__button > span::before {
     transform: translateY(-7px);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     position: absolute;
     width: 15px;
     height: 3px;
@@ -353,35 +308,54 @@ body {
     margin-right: -13px;
   }
 
-  &__button>span::after{
+  &__button > span::after {
     transform: translateY(7px);
   }
 
+  // -------------button-active------------
 
-// -------------button-active------------
-
-  &__button>span.active{
+  &__button > span.active {
     height: 0px;
   }
 
-  &__button>span.active::before{
+  &__button > span.active::before {
     transform: rotate(45deg);
     width: 30px;
     margin-top: 0px;
   }
 
-  &__button>span.active::after {
+  &__button > span.active::after {
     transform: rotate(-45deg);
     width: 30px;
   }
 }
 
-
-
 // -----------the end of Header------------
+.button,
+.main-block__headline,
+.main-block__headline-text,
+.block-text,
+.advantage__headline,
+.prices__headline {
+  text-transform: capitalize;
+}
 
+.button {
+  width: 119px;
+  height: 37px;
+  background-color: variables.$bg-color-page-main;
+  border-radius: 40px;
+  @include mixins.flexbox(center, center, row);
+  color: variables.$fonts-color-headers-main;
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-s-m;
+  line-height: variables.$fonts-line-height-s-s;
 
-
+  @media only screen and (min-width: variables.$media-tablet) {
+    width: 145px;
+    height: 38px;
+  }
+}
 
 // Main block
 .main-block {
@@ -521,9 +495,15 @@ body {
   @media only screen and (min-width: variables.$media-laptop) {
     line-height: variables.$fonts-line-height-m-m;
   }
+}
 
-  &:hover {
-    border-width: 2px;
+.button--main-block:hover {
+  background-color: variables.$bg-color-page-hover;
+  border: 1px solid variables.$fonts-color-main;
+  border-width: 2px;
+
+  & > p {
+    color: variables.$fonts-color-main;
   }
 }
 
@@ -827,15 +807,9 @@ body {
   }
 }
 
-
-
-
 //-----------The start people are talking --------------
 
-
-
-
-.about{
+.about {
   background-image: url(../images-src/pictures/backgroubd-first.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -856,112 +830,101 @@ body {
       padding-top: 60px;
       margin-bottom: 50px;
     }
-    @media only screen and (min-width: 768px){
+    @media only screen and (min-width: 768px) {
       @include mixins.flexbox(center, center, row);
       font-size: variables.$fonts-size-xl-s;
       line-height: variables.$fonts-line-height-l-xl;
       padding-top: 85px;
       margin-bottom: 85px;
     }
-    @media only screen and (min-width: 1200px){
+    @media only screen and (min-width: 1200px) {
       padding-top: 110px;
       font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       margin-bottom: 80px;
     }
 
-    &-span{
+    &-span {
       @include mixins.flexbox(center, center, row);
       text-transform: capitalize;
     }
-}
-&__conteiner {
-  color: variables.$fonts-color-headers-main;
-  @include mixins.flexbox(center, center, row);
-  flex-wrap: wrap;
-  @media only screen and (max-width: 767px){
-  row-gap: 40px;
-  margin-bottom: 30px;
   }
-  @media only screen and (min-width: 768px){
-    row-gap: 50px;
-    column-gap: 120px;
-    margin-bottom: 65px;
+  &__conteiner {
+    color: variables.$fonts-color-headers-main;
+    @include mixins.flexbox(center, center, row);
+    flex-wrap: wrap;
+    @media only screen and (max-width: 767px) {
+      row-gap: 40px;
+      margin-bottom: 30px;
+    }
+    @media only screen and (min-width: 768px) {
+      row-gap: 50px;
+      column-gap: 120px;
+      margin-bottom: 65px;
+    }
+    @media only screen and (min-width: 1200px) {
+      row-gap: 110px;
+      column-gap: 120px;
+      margin-bottom: 115px;
+    }
   }
-  @media only screen and (min-width: 1200px){
-    row-gap: 110px;
-    column-gap: 120px;
-    margin-bottom: 115px;
+  &__card {
+    width: 290px;
+    height: 170px;
+    color: variables.$fonts-color-headers-main;
   }
-}
-&__card {
-  width: 290px;
-  height: 170px;
-  color: variables.$fonts-color-headers-main;
-
-}
-&__card-logo {
-  min-height: 65px;
-  margin-bottom: 30px;
-  @include mixins.flexbox(center, center, row);
-}
-&__card-text {
-  @include mixins.flexbox(center, center, row);
-  color: variables.$fonts-color-headers-main;
-}
-&__paragraph{
-  width: 90%;
-  margin: 0 auto;
-  height: auto;
-  @include mixins.flexbox(center, center, row);
-  color: variables.$fonts-color-text-decor;
-  font-family: variables.$f-family-secondary;
-  font-weight: 400;
-  font-size: variables.$fonts-size-s-s;
-  line-height: variables.$fonts-line-height-m-s;
-  background-color: transparent;
-  & span{
+  &__card-logo {
+    min-height: 65px;
+    margin-bottom: 30px;
     @include mixins.flexbox(center, center, row);
   }
-
-  @media only screen and (min-width: 1200px){
-    width: 880px;
-    padding-bottom: 20px;
-    height: 35px
+  &__card-text {
+    @include mixins.flexbox(center, center, row);
+    color: variables.$fonts-color-headers-main;
   }
-}
-  &__paragraph-line{ 
-    @media only screen and (max-width: 767px){
+  &__paragraph {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    @include mixins.flexbox(center, center, row);
+    color: variables.$fonts-color-text-decor;
+    font-family: variables.$f-family-secondary;
+    font-weight: 400;
+    font-size: variables.$fonts-size-s-s;
+    line-height: variables.$fonts-line-height-m-s;
+    background-color: transparent;
+    & span {
+      @include mixins.flexbox(center, center, row);
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 880px;
+      padding-bottom: 20px;
+      height: 35px;
+    }
+  }
+  &__paragraph-line {
+    @media only screen and (max-width: 767px) {
       width: 245px;
       height: 2px;
       background-color: variables.$bg-color-decor-strip;
     }
 
-    
-
-  @media only screen and (min-width: 768px){
-    width: 555px;
-    height: 2px;
-    background-color: variables.$bg-color-decor-strip;
+    @media only screen and (min-width: 768px) {
+      width: 555px;
+      height: 2px;
+      background-color: variables.$bg-color-decor-strip;
+    }
+    @media only screen and (min-width: 1200px) {
+      width: 780px;
+      height: 2px;
+      margin-bottom: 0px;
+      background-color: variables.$bg-color-decor-strip;
+    }
   }
-  @media only screen and (min-width: 1200px){
-    width: 780px;
-    height: 2px;
-    margin-bottom: 0px;
-    background-color: variables.$bg-color-decor-strip;
-  }
-
 }
-
-}
-
-
-
 
 //-----------The end people are talking --------------
-
-
-
 
 // Price block - "Fork Subscription Pricing"
 .prices-background {
