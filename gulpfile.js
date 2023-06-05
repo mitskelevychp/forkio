@@ -86,7 +86,6 @@ function cleanDist() {
   return src("dist").pipe(clean());
 }
 
-//      "src/**/*.html" => "src/index.html",
 function building() {
   return src(
     [
