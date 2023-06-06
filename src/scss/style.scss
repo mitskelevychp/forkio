@@ -640,7 +640,7 @@ body {
 // Advantages block - "Here is what you get"
 .advantages {
   @media only screen and (min-width: variables.$media-tablet) {
-    padding: 0px 30px;
+    padding: 0px 29px;
   }
   @media only screen and (min-width: variables.$media-laptop) {
     width: 540px;
@@ -752,8 +752,10 @@ body {
     height: 64px;
     margin-bottom: 25px;
 
-    @media only screen and (min-width: variables.$media-tablet) {
+    @media only screen and (min-width: variables.$media-tablet) and (max-width: 650px) {
       margin-bottom: 0px;
+      width: 95%;
+      height: 95%;
     }
 
     &--second {
