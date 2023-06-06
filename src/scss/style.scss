@@ -95,22 +95,28 @@ body {
 
 .header{
   background-color: variables.$bg-color-header-mobile;
-  width: 100%;
+  display: flex;
+  min-width: 320px;
+  width: 100vw;
   position: relative;
   z-index: 4;
   @include mixins.flexbox(center, center, row);
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 480px) {
     min-height: 100px;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 481px) {
     min-height: 120px;
   }
-  @media only screen and (max-width: 1199px) {
+  @media only screen and (max-width: 992px) {
     min-height: 120px;
   }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 993px) {
     min-height: 100px;
+    background-color: variables.$bg-color-laptop-header;
+  }
+  @media only screen and (min-width: 1201){
+
   }
 
   &__logo{
@@ -158,10 +164,10 @@ body {
 
 
 
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 480px){
       display: none;
     }
-    @media only screen and (min-width: 768px) { 
+    @media only screen and (min-width: 7481px) { 
     display: block;
     } 
     @media only screen and (min-width: 1200px){
@@ -174,21 +180,30 @@ body {
   &__conteiner {
     @include mixins.flexbox(space-between, center, row);
     background-color: variables.$bg-color-header-mobile;
-    width: 90%;
+    min-width: 300px;
+    width: 100%;
     height: 100%;
+    padding: 10px 10px;
     position: relative;
     z-index: 3;
-    @media only screen and (min-width: 768px){
+    @media only screen and (max-width: 320px){
+      width: 300px;
+    }
+
+    @media only screen and (min-width: 481px){
       flex-wrap: wrap;
     }
-    @media only screen and (min-width: 1200px){
-      // @include mixins.flexbox(space-between, center, row);
+    @media only screen and (min-width:  993px){
+      background-color: variables.$bg-color-laptop-header;
+      max-width: 1200px;
+      flex-wrap: nowrap;
     }
     }
 
 
   &__list {
-    @media only screen and (max-width: 767px) {
+    margin: 0 auto;
+    @media only screen and (max-width: 480px) {
       display: none;
       background-color: variables.$bg-color-menu-mobile;
       order: 2;
@@ -215,7 +230,6 @@ body {
         font-size: variables.$fonts-size-m-l;
         line-height: variables.$fonts-line-height-m-xxl;
         @include mixins.flexbox(start, center, row);
-        // padding: 35px 35px;
         border-bottom: 1px solid variables.$fonts-color-main;
       }
       &-item a{  
@@ -228,8 +242,8 @@ body {
         color: variables.$fonts-color-headers-main;
         @include mixins.flexbox(center, center, row);
       }
-      &-item:active,
-      &-item:hover a{
+      &-item>a:active,
+      &-item>a:focus {
         color: variables.$fonts-color-main;
       }
 
@@ -238,13 +252,13 @@ body {
         height: 60%;
         background-color: variables.$bg-color-menu-mobile;
       }
-      &-item:active,
-      &-item:hover p{
-        background-color: variables.$fonts-color-main;
+      &-item:active p,
+      &-item:focus p{
+        background-color: variables.$bg-color-page-main;
       }
 
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 481px) {
       @include mixins.flexbox(space-around, center, row);
       order: 3;
       width: 90%;
@@ -256,7 +270,7 @@ body {
       line-height: variables.$fonts-line-height-s-xl;
       padding-top: 2%;
     }
-    @media only screen and (min-width: 1200px){
+    @media only screen and (min-width: 993px){
       font-family: variables.$f-family-main;
       font-weight: 700;
       font-size: variables.$fonts-size-s-l;
@@ -264,11 +278,12 @@ body {
       order: 2;
       width: 60%;
       @include mixins.flexbox(end, center, row);
+      // background-color: lime;
+      // border: 1px solid pink;
       &-item{
         margin: 10px 15px;
       }
       &-item:hover a{
-
         color: variables.$fonts-color-headers-main;
       }
     }
@@ -290,17 +305,18 @@ body {
     z-index: 3;
     order: 1;
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 480px) {
     width: 120px;
     padding: 11px 10px;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 481px) {
     width: 145px;
     padding: 11px 20px;
+    margin: 10px;
     order: 2;
     height: 50%;
   }
-  @media only screen and (min-width: 1200px){
+  @media only screen and (min-width: 993px){
     order: 3;
     &:hover{
       color: variables.$fonts-color-main;
@@ -311,10 +327,7 @@ body {
   
   &__button {
     order: 4;
-    @media only screen and (min-width: 768px){
-      display: none;
 
-    }
     display: block;
     width: 40px;
     height: 40px;
@@ -322,7 +335,11 @@ body {
     box-sizing: border-box;
     border: none;
     position: relative;
-    z-index: 3;
+    z-index: 3; 
+    @media only screen and (min-width: 481px){
+    display: none;
+    
+    }
   }
 
   &__button>span,
@@ -1221,14 +1238,14 @@ body {
 }
 
 @media only screen and (min-width: variables.$media-laptop-large) {
-  .header,
+  .header>.conteiner,
   .advantages-wrapper,
   .reviews-wrapper,
   .prices-wrapper {
     max-width: 1200px;
   }
 
-  .header,
+  .header>.conteiner,
   .advantages-wrapper {
     margin: 0 auto;
   }
