@@ -752,8 +752,11 @@ body {
     height: 64px;
     margin-bottom: 25px;
 
-    @media only screen and (min-width: variables.$media-tablet) and (max-width: 650px) {
+    @media only screen and (min-width: variables.$media-tablet) {
       margin-bottom: 0px;
+    }
+
+    @media only screen and (min-width: variables.$media-tablet) and (max-width: 650px) {
       width: 95%;
       height: 95%;
     }
@@ -1163,10 +1166,9 @@ body {
   }
 
   .advantage__icon-wrapper {
+    @include mixins.flexbox(center, center, column);
     margin-right: 23px;
     width: 111px;
-    display: flex;
-    justify-content: center;
   }
 
   .prices__price--accent .prices__price__number {
