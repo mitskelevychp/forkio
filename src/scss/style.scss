@@ -57,63 +57,77 @@ body {
   }
 }
 
-//
-// Header
+
+
+
+
 //-----------------the start of header--------------
-.header {
+
+
+
+
+
+.header{
   background-color: variables.$bg-color-header-mobile;
-  width: 100%;
+  display: flex;
+  min-width: 320px;
+  width: 100vw;
   position: relative;
   z-index: 4;
   @include mixins.flexbox(center, center, row);
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 480px) {
     min-height: 100px;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 481px) {
     min-height: 120px;
   }
-  @media only screen and (max-width: 1199px) {
+  @media only screen and (max-width: 992px) {
     min-height: 120px;
   }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 993px) {
     min-height: 100px;
+    background-color: variables.$bg-color-laptop-header;
+  }
+  @media only screen and (min-width: 1201){
+
   }
 
-  &__logo {
+  &__logo{
     position: relative;
     z-index: 3;
     @include mixins.flexbox(center, center, row);
     order: 1;
-
-    @media only screen and (min-width: 768px) {
-      @include mixins.flexbox(flex-start, center, row);
+    
+    @media only screen and (min-width: 768px){
+      @include mixins.flexbox(start, center, row);
       height: 50%;
       width: 50%;
     }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1200px){
       height: 100%;
       width: 15%;
-      &:hover .header__logo-logo {
-        background-image: url(../images/logo/logo-hover.webp);
+      &:hover .header__logo-logo{
+        background-image: url(../images-src/logo/logo-hover.png)
       }
       &:active,
-      &:hover .header__logo-text {
+      &:hover .header__logo-text{
         color: variables.$fonts-color-headers-main;
       }
     }
   }
-  &__logo-logo {
+  &__logo-logo{
     display: block;
     width: 40px;
     height: 40px;
-    background: url(../images/logo/Logo.webp);
+    background: url(../images-src/logo/Logo.png)
   }
   @media only screen and (min-width: 1200px) {
-    &__logo-logo:hover {
-      background: url(../images/logo/logo-hover.webp);
+    &__logo-logo:hover{
+      background: url(../images-src/logo/logo-hover.png);
     }
   }
+
 
   &__logo-text {
     text-transform: uppercase;
@@ -122,40 +136,52 @@ body {
     font-weight: 700;
     margin-left: 16px;
 
-    @media only screen and (max-width: 767px) {
+
+
+    @media only screen and (max-width: 480px){
       display: none;
     }
-    @media only screen and (min-width: 768px) {
-      display: block;
-    }
-    @media only screen and (min-width: 1200px) {
-      &:hover {
+    @media only screen and (min-width: 7481px) { 
+    display: block;
+    } 
+    @media only screen and (min-width: 1200px){
+      &:hover{
         color: variables.$fonts-color-headers-main;
       }
     }
   }
-
+  
   &__conteiner {
     @include mixins.flexbox(space-between, center, row);
     background-color: variables.$bg-color-header-mobile;
-    width: 90%;
+    min-width: 300px;
+    width: 100%;
     height: 100%;
+    padding: 10px 10px;
     position: relative;
     z-index: 3;
-    @media only screen and (min-width: 768px) {
+    @media only screen and (max-width: 320px){
+      width: 300px;
+    }
+
+    @media only screen and (min-width: 481px){
       flex-wrap: wrap;
     }
-    @media only screen and (min-width: 1200px) {
-      // @include mixins.flexbox(space-between, center, row);
+    @media only screen and (min-width:  993px){
+      background-color: variables.$bg-color-laptop-header;
+      max-width: 1200px;
+      flex-wrap: nowrap;
     }
-  }
+    }
+
 
   &__list {
-    @media only screen and (max-width: 767px) {
+    margin: 0 auto;
+    @media only screen and (max-width: 480px) {
       display: none;
       background-color: variables.$bg-color-menu-mobile;
       order: 2;
-      &.active {
+      &.active{
         position: fixed;
         top: 0;
         left: 10;
@@ -170,45 +196,55 @@ body {
         font-size: variables.$fonts-size-m-l;
         line-height: variables.$fonts-line-height-m-xxl;
       }
-      &-item {
+      &-item{
         width: 100%;
         height: 100%;
         font-family: variables.$f-family-main;
         font-weight: 400;
         font-size: variables.$fonts-size-m-l;
         line-height: variables.$fonts-line-height-m-xxl;
-        @include mixins.flexbox(flex-start, center, row);
-        // padding: 35px 35px;
+        @include mixins.flexbox(start, center, row);
         border-bottom: 1px solid variables.$fonts-color-main;
       }
-      &-item a {
+      &-item>a.header__list-text{  
         width: 100%;
         height: 100%;
-        font-family: variables.$f-family-main;
-        font-weight: 400;
-        font-size: variables.$fonts-size-m-l;
-        line-height: variables.$fonts-line-height-m-xxl;
-        color: variables.$fonts-color-headers-main;
+        color: variables.$fonts-color-main;
         @include mixins.flexbox(center, center, row);
+        @media only screen and (max-width: 480px){
+          font-family: variables.$f-family-main;
+          font-weight: 400;
+          font-size: variables.$fonts-size-m-l;
+          line-height: variables.$fonts-line-height-m-xxl;
+          color: variables.$fonts-color-headers-main;
+        }
+        @media only screen and (min-width: 481px){
+          font-family: variables.$f-family-main;
+          font-weight: 700;
+          font-size: variables.$fonts-size-s-l;
+          line-height: variables.$fonts-line-height-s-xl;
+        }
       }
-      &-item:active,
-      &-item:hover a {
+      &-item>a:active,
+      &-item>a:focus {
         color: variables.$fonts-color-main;
       }
 
-      &-item p {
+      &-item p{
         width: 2%;
         height: 60%;
         background-color: variables.$bg-color-menu-mobile;
       }
-      &-item:active,
-      &-item:hover p {
-        background-color: variables.$fonts-color-main;
+      &-item:active p,
+      &-item:focus p{
+        background-color: variables.$bg-color-page-main;
       }
+
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 481px) {
       @include mixins.flexbox(space-around, center, row);
       order: 3;
+      border-radius: 3px dashed red;
       width: 90%;
       height: 50%;
       color: variables.$fonts-color-main;
@@ -218,21 +254,24 @@ body {
       line-height: variables.$fonts-line-height-s-xl;
       padding-top: 2%;
     }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 993px){
       font-family: variables.$f-family-main;
       font-weight: 700;
       font-size: variables.$fonts-size-s-l;
       line-height: variables.$fonts-line-height-s-l;
       order: 2;
       width: 60%;
-      @include mixins.flexbox(flex-end, center, row);
-      &-item {
+      @include mixins.flexbox(end, center, row);
+      // background-color: lime;
+      // border: 1px solid pink;
+      &-item{
         margin: 10px 15px;
       }
-      &-item:hover a {
+      &-item:hover a{
         color: variables.$fonts-color-headers-main;
       }
     }
+
   }
 
   &__buy {
@@ -250,30 +289,29 @@ body {
     z-index: 3;
     order: 1;
 
-    @media only screen and (max-width: 767px) {
-      width: 120px;
-      padding: 11px 10px;
-    }
-    @media only screen and (min-width: 768px) {
-      width: 145px;
-      padding: 11px 20px;
-      order: 2;
-      height: 50%;
-    }
-    @media only screen and (min-width: 1200px) {
-      order: 3;
-      &:hover {
-        color: variables.$fonts-color-main;
-        background-color: variables.$bg-color-page-hover;
-      }
+  @media only screen and (max-width: 480px) {
+    width: 120px;
+    padding: 11px 10px;
+  }
+  @media only screen and (min-width: 481px) {
+    width: 145px;
+    padding: 11px 20px;
+    margin: 10px;
+    order: 2;
+    height: 50%;
+  }
+  @media only screen and (min-width: 993px){
+    order: 3;
+    &:hover{
+      color: variables.$fonts-color-main;
+      background-color: variables.$bg-color-page-hover
     }
   }
-
+}
+  
   &__button {
     order: 4;
-    @media only screen and (min-width: 768px) {
-      display: none;
-    }
+
     display: block;
     width: 40px;
     height: 40px;
@@ -281,29 +319,33 @@ body {
     box-sizing: border-box;
     border: none;
     position: relative;
-    z-index: 3;
+    z-index: 3; 
+    @media only screen and (min-width: 481px){
+    display: none;
+    
+    }
   }
 
-  &__button > span,
-  &__button > span::after {
-    background-color: #ffffff;
+  &__button>span,
+  &__button>span::after{
+    background-color: #FFFFFF;
     width: 26px;
     height: 3px;
     position: absolute;
-    top: 50%;
+    top: 50%; 
     right: 50%;
     margin-right: -13px;
   }
 
-  &__button > span::before,
-  &__button > span::after {
+  &__button>span::before,
+  &__button>span::after{
     content: "";
     transition: 0.2s;
   }
 
-  &__button > span::before {
+  &__button>span::before{
     transform: translateY(-7px);
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     position: absolute;
     width: 15px;
     height: 3px;
@@ -312,29 +354,34 @@ body {
     margin-right: -13px;
   }
 
-  &__button > span::after {
+  &__button>span::after{
     transform: translateY(7px);
   }
 
-  // -------------button-active------------
 
-  &__button > span.active {
+// -------------button-active------------
+
+  &__button>span.active{
     height: 0px;
   }
 
-  &__button > span.active::before {
+  &__button>span.active::before{
     transform: rotate(45deg);
     width: 30px;
     margin-top: 0px;
   }
 
-  &__button > span.active::after {
+  &__button>span.active::after {
     transform: rotate(-45deg);
     width: 30px;
   }
 }
 
+
+
 // -----------the end of Header------------
+
+
 .main-block,
 .block-text,
 .repo-details-section,
@@ -814,17 +861,31 @@ body {
   }
 }
 
+
+
 //-----------The start people are talking --------------
 
-.about {
-  background-image: url(../images/pictures/backgroubd-first.webp);
+
+
+
+.about{
+  background-image: url(../images-src/pictures/backgroubd-first.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-width: 320px;
+  padding-bottom: 0px;
+  margin-bottom: -15px;
+  @include mixins.flexbox(center, center, column);
 
-  // &__block {
-  //   // color: variables.$fonts-color-headers-main;
-  // }
+
+  &__block {
+
+    @include mixins.flexbox(center, center, column);
+    min-width: 320px;
+    max-width: 1200px;
+    padding-bottom: 40px;
+  }
 
   &__title {
     @include mixins.font-main-stress;
@@ -837,101 +898,126 @@ body {
       padding-top: 60px;
       margin-bottom: 50px;
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px){
       @include mixins.flexbox(center, center, row);
       font-size: variables.$fonts-size-xl-s;
       line-height: variables.$fonts-line-height-l-xl;
       padding-top: 85px;
       margin-bottom: 85px;
     }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1200px){
       padding-top: 110px;
       font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       margin-bottom: 80px;
     }
 
-    &-span {
+    &-span{
       @include mixins.flexbox(center, center, row);
       text-transform: capitalize;
     }
+}
+&__conteiner {
+  color: variables.$fonts-color-headers-main;
+  @include mixins.flexbox(center, center, row);
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 95%;
+  @media only screen and (min-width: 320px){
+  min-width: 300px;
+  row-gap: 40px;
+  margin-bottom: 30px;
   }
-  &__conteiner {
-    color: variables.$fonts-color-headers-main;
-    @include mixins.flexbox(center, center, row);
-    flex-wrap: wrap;
-    @media only screen and (max-width: 767px) {
-      row-gap: 40px;
-      margin-bottom: 30px;
-    }
-    @media only screen and (min-width: 768px) {
-      row-gap: 50px;
-      column-gap: 120px;
-      margin-bottom: 65px;
-    }
-    @media only screen and (min-width: 1200px) {
-      row-gap: 110px;
-      column-gap: 120px;
-      margin-bottom: 115px;
-    }
+  @media only screen and (min-width: 481px){
+    row-gap: 50px;
+    column-gap: 100px;
+    margin-bottom: 65px;
   }
-  &__card {
-    width: 290px;
-    height: 170px;
-    color: variables.$fonts-color-headers-main;
+  @media only screen and (min-width: 993px){
+    row-gap: 110px;
+    column-gap: 120px;
+    margin-bottom: 115px;
   }
-  &__card-logo {
-    min-height: 65px;
-    margin-bottom: 30px;
-    @include mixins.flexbox(center, center, row);
-  }
-  &__card-text {
-    @include mixins.flexbox(center, center, row);
-    color: variables.$fonts-color-headers-main;
-  }
-  &__paragraph {
-    width: 90%;
-    margin: 0 auto;
-    height: auto;
-    @include mixins.flexbox(center, center, row);
-    color: variables.$fonts-color-text-decor;
+}
+&__card {
+  width: 290px;
+  height: 170px;
+  color: variables.$fonts-color-headers-main;
+
+}
+&__card-logo {
+  min-height: 65px;
+  margin-bottom: 30px;
+  @include mixins.flexbox(center, center, row);
+}
+&__card-text {
+  @include mixins.flexbox(center, center, row);
+  text-align: center;
+  color: variables.$fonts-color-headers-main;
+}
+&__paragraph{
+  padding: 10px;
+  width: 100%;
+  // margin: 0 auto;
+  height: auto;
+  @include mixins.flexbox(center, center, column);
+  color: variables.$fonts-color-text-decor;
+  font-family: variables.$f-family-secondary;
+  font-weight: 400;
+  font-size: variables.$fonts-size-s-s;
+  line-height: variables.$fonts-line-height-m-s;
+
+  &>span{
     font-family: variables.$f-family-secondary;
     font-weight: 400;
     font-size: variables.$fonts-size-s-s;
     line-height: variables.$fonts-line-height-m-s;
-    background-color: transparent;
-    & span {
-      @include mixins.flexbox(center, center, row);
-    }
+    text-align: center;
+    // @include mixins.flexbox(center, center, column);
+    @media only screen and (max-width: 480px){
+      width: 250px;
+      height: 150px ;
+      margin-bottom: 20px;
 
-    @media only screen and (min-width: 1200px) {
-      width: 880px;
-      padding-bottom: 20px;
+    } 
+    @media only screen and (min-width: 481px){
+      width: 90%;
+      max-width: 700px;
+      height: 55px;
+      margin-bottom: 70px;
+    }
+    @media only screen and (min-width: 992px){
+      width: 890px;
       height: 35px;
+      margin-bottom: 115px;
     }
-  }
-  &__paragraph-line {
-    @media only screen and (max-width: 767px) {
-      width: 245px;
-      height: 2px;
-      background-color: variables.$bg-color-decor-strip;
-    }
-
-    @media only screen and (min-width: 768px) {
-      width: 555px;
-      height: 2px;
-      background-color: variables.$bg-color-decor-strip;
-    }
-    @media only screen and (min-width: 1200px) {
-      width: 780px;
-      height: 2px;
-      margin-bottom: 0px;
-      background-color: variables.$bg-color-decor-strip;
-    }
+  
   }
 }
+  &__paragraph-line{ 
+    height: 2px;
+    background-color: variables.$bg-color-decor-strip;
+    @media only screen and (max-width: 480px){
+      width: 245px;
+    }
+  @media only screen and (min-width: 481px){
+    max-width: 80vw;
+    width: 555px;
+  }
+  @media only screen and (min-width: 993px){
+    width: 780px;
+    margin-bottom: 0px;
+  }
+}
+}
+
+
+
 
 //-----------The end people are talking --------------
+
+
+
 
 // Price block - "Fork Subscription Pricing"
 .prices-background {
